@@ -1,12 +1,17 @@
 /*
  * Regadera: programa para enviar listas de mails vía ssmtp
- * Copyleft Sergio A. Alonso - escuelaint@gmail.com
+ * Copyleft Sergio A. Alonso - escuelaint @ gmail.com
  * 
  * Links utilizados
  * - http://www.forosdelweb.com/f45/ejecutar-comando-linux-desde-java-498304/
  * - http://www.chuidiang.com/chuwiki/index.php?title=Lectura_y_Escritura_de_Ficheros_en_Java
  *
- * Ver archivo de ejemplo en /src -> cursos.html
+ * Ver archivo de ejemplo en /src -> alcaldesa.html
+ *
+ * No olvidar incluir opcion de desuscripcion. Yo uso un formulario / hoja de calculo
+ * de google docs, que es lo mas comodo. En este caso:
+ *
+ * http://spreadsheets.google.com/viewform?hl=es&formkey=dEpMQ0VOYnlPUmZQekNwTV9Tdk4zOFE6MA
  * 
  */
 package regadera;
