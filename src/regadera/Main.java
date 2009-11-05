@@ -80,7 +80,7 @@ public class Main {
 
                     //guardo en el log lo que guardé...
                     try {
-                        BufferedWriter out = new BufferedWriter(new FileWriter("traza.log", true));
+                        BufferedWriter out = new BufferedWriter(new FileWriter("/home/s/Desktop/Proyectos/NetBeansProjects/regadera/src/regadera/traza.log", true));
                         out.write(str + "\n");
                         out.close();
                     } catch (IOException e) {
