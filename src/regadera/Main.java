@@ -47,7 +47,7 @@ public class Main {
         //    try {
         // Apertura del fichero y creacion de BufferedReader para poder
         // hacer una lectura comoda (disponer del metodo readLine()).
-        archivo = new File("/home/s/Desktop/Proyectos/NetBeansProjects/regadera/src/regadera/limpios-a-nov-2009.txt");
+        archivo = new File("regadera/limpitos.new");
         fr = new FileReader(archivo);
         br = new BufferedReader(fr);
 
@@ -63,7 +63,7 @@ public class Main {
         try {
 
             //Me envio una copia...
-            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < /home/s/Desktop/Proyectos/NetBeansProjects/regadera/src/regadera/alcaldesa.html"};
+            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < regadera/alcaldesa.html"};
 
 
             for (int i = 0; i < v.size(); i++) {
@@ -81,11 +81,11 @@ public class Main {
                 try {
                     //String command = "ls -lh ";
 
-                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < /home/s/Desktop/Proyectos/NetBeansProjects/regadera/src/regadera/alcaldesa.html"};
+                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/weeding.html"};
 
                     //guardo en el log lo que guardé...
                     try {
-                        BufferedWriter out = new BufferedWriter(new FileWriter("/home/s/Desktop/Proyectos/NetBeansProjects/regadera/src/regadera/traza.log", true));
+                        BufferedWriter out = new BufferedWriter(new FileWriter("regadera/traza.log", true));
                         out.write(str + "\n");
                         out.close();
                     } catch (IOException e) {
