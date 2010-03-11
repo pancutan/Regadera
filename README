@@ -13,3 +13,7 @@ Al final, bastante mosqueado, escribí este programita en java.
 3) Deja tranquilo al server un (buen) rato, y vuelve a la carga. Ajustable, vea.
 
 Decidí no agregarle lectura de parámetros desde consola, a fin de no facilitarle las cosas a cualquier cochino spammer que pudiera llegar hasta aquí.
+
+Mas información sobre el uso de este programa: src/regadera/Main.java
+
+Sergio <aka> obelix.bunker.org.ar

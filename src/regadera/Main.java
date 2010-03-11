@@ -7,11 +7,47 @@
  * - http://www.chuidiang.com/chuwiki/index.php?title=Lectura_y_Escritura_de_Ficheros_en_Java
  *
  * Ver archivo de ejemplo en /src -> alcaldesa.html
+ * Para crear comodamente el archivo HTML, lo ideal es utilizar el composer de
+ * seamonkey, amaya o kompozer, o vim
+ *
+ * Ejemplo de inyección de correo con HTML simple, que vincula a imagen alojada en algun server:
+ *
+
+From: Informes Fundación Islas Malvinas - <info@eim.edu.ar>
+Subject: Pequeños y Teens Chefs: a clase!
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+</head>
+<body>
+ Escuela de Cocina para Niños y Adolescentes<br>
+ Haga click <a href="http://www.eim.esc.edu.ar/site/descargas/peqyteens.jpg"">aqui</a> si no puede ver el siguiente mensaje.
+<img style="width: 550px; height: 2054px;" src="http://www.eim.esc.edu.ar/site/descargas/peqyteens.jpg"><br>
+¡¡Agradecemos su difusión¡¡</p>
+<p></p>
+<p>Si desea desuscribirse, a nuestro boletin de noticias, haga click <a
+ href="http://spreadsheets.google.com/viewform?hl=es&amp;formkey=dEpMQ0VOYnlPUmZQekNwTV9Tdk4zOFE6MA">aqui</a></p>
+</body>
+</html>
  *
  * No olvidar incluir opcion de desuscripcion. Yo uso un formulario / hoja de calculo
  * de google docs, que es lo mas comodo. En este caso:
  *
  * http://spreadsheets.google.com/viewform?hl=es&formkey=dEpMQ0VOYnlPUmZQekNwTV9Tdk4zOFE6MA
+ *
+ * Los HTML a enviar deben tener un encabezado que el server de correo pueda aceptar, como
+ *
+ * From: Informes Fundación Islas Malvinas - <info@eim.edu.ar>
+ * Subject: Eje turístico: visita de Alcaldesa de Viña del Mar
+ * Content-Type: text/html;charset=UTF-8
+ * Content-Transfer-Encoding: 7bit
+ * 
+ * Si se poseen bases de datos muy grandes, para no abusar del server SMTP, se
+ * recomienda tambien leer http://bunker-blog.blogspot.com/2009/11/sexpy.html
  * 
  */
 package regadera;
@@ -47,7 +83,7 @@ public class Main {
         //    try {
         // Apertura del fichero y creacion de BufferedReader para poder
         // hacer una lectura comoda (disponer del metodo readLine()).
-        archivo = new File("regadera/limpitos.new");
+        archivo = new File("regadera/limpios.txt");
         fr = new FileReader(archivo);
         br = new BufferedReader(fr);
 
@@ -63,7 +99,7 @@ public class Main {
         try {
 
             //Me envio una copia...
-            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < regadera/alcaldesa.html"};
+            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < regadera/peqchefs.html"};
 
 
             for (int i = 0; i < v.size(); i++) {
@@ -81,7 +117,7 @@ public class Main {
                 try {
                     //String command = "ls -lh ";
 
-                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/weeding.html"};
+                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/peqchefs.html"};
 
                     //guardo en el log lo que guardé...
                     try {
