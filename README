@@ -1,0 +1,15 @@
+El fin de semana necesitaba enviar un aviso a un listado grande de correos (869). Sin embargo, no quiero abusar de mi SMTP, que además de ser pago, soporta algo así como 200 msg/hora.
+
+Disclaimer: Es muy poco frecuente que me dedique a este tipo de tareas, y todas las direcciones que tengo que enviar son de profesores y alumnos de la escuela.
+
+El sabado estuve bajando sharewares que hacían la tarea. Y son todos malisimos. El mejorcito, Atomic NoseQue se colgaba en el 67º envío.
+
+Al final, bastante mosqueado, escribí este programita en java.
+
+1) Alimenta un vector con un archivo repleto de correos. No, no soporta wab, ni doc, ni csv, ni pst. Un poco de rudimentaria minería y una hoja de cálculo, bastaría para crearlo.
+
+2) Serializa el comando ssmtp (¡ojo, q no es un daemon, RTFM!). Hay que configurarlo previamente como figura aquí.
+
+3) Deja tranquilo al server un (buen) rato, y vuelve a la carga. Ajustable, vea.
+
+Decidí no agregarle lectura de parámetros desde consola, a fin de no facilitarle las cosas a cualquier cochino spammer que pudiera llegar hasta aquí.
