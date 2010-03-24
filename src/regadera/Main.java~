@@ -8,7 +8,31 @@
  *
  * Ver archivo de ejemplo en /src -> alcaldesa.html
  * Para crear comodamente el archivo HTML, lo ideal es utilizar el composer de
- * seamonkey, amaya o kompozer
+ * seamonkey, amaya o kompozer, o vim
+ *
+ * Ejemplo de inyección de correo con HTML simple, que vincula a imagen alojada en algun server:
+ *
+
+From: Informes Fundación Islas Malvinas - <info@eim.edu.ar>
+Subject: Pequeños y Teens Chefs: a clase!
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+</head>
+<body>
+ Escuela de Cocina para Niños y Adolescentes<br>
+ Haga click <a href="http://www.eim.esc.edu.ar/site/descargas/peqyteens.jpg"">aqui</a> si no puede ver el siguiente mensaje.
+<img style="width: 550px; height: 2054px;" src="http://www.eim.esc.edu.ar/site/descargas/peqyteens.jpg"><br>
+¡¡Agradecemos su difusión¡¡</p>
+<p></p>
+<p>Si desea desuscribirse, a nuestro boletin de noticias, haga click <a
+ href="http://spreadsheets.google.com/viewform?hl=es&amp;formkey=dEpMQ0VOYnlPUmZQekNwTV9Tdk4zOFE6MA">aqui</a></p>
+</body>
+</html>
  *
  * No olvidar incluir opcion de desuscripcion. Yo uso un formulario / hoja de calculo
  * de google docs, que es lo mas comodo. En este caso:
@@ -22,7 +46,8 @@
  * Content-Type: text/html;charset=UTF-8
  * Content-Transfer-Encoding: 7bit
  * 
- * Se recomienda tambien leer http://bunker-blog.blogspot.com/2009/11/sexpy.html
+ * Si se poseen bases de datos muy grandes, para no abusar del server SMTP, se
+ * recomienda tambien leer http://bunker-blog.blogspot.com/2009/11/sexpy.html
  * 
  */
 package regadera;
@@ -58,7 +83,7 @@ public class Main {
         //    try {
         // Apertura del fichero y creacion de BufferedReader para poder
         // hacer una lectura comoda (disponer del metodo readLine()).
-        archivo = new File("regadera/limpios.txt");
+        archivo = new File("regadera/limpios3.txt");
         fr = new FileReader(archivo);
         br = new BufferedReader(fr);
 

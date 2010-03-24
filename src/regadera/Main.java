@@ -83,7 +83,7 @@ public class Main {
         //    try {
         // Apertura del fichero y creacion de BufferedReader para poder
         // hacer una lectura comoda (disponer del metodo readLine()).
-        archivo = new File("regadera/limpios.txt");
+        archivo = new File("regadera/limpios3.txt");
         fr = new FileReader(archivo);
         br = new BufferedReader(fr);
 
@@ -117,7 +117,7 @@ public class Main {
                 try {
                     //String command = "ls -lh ";
 
-                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/peqchefs.html"};
+                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/diplomatura.html"};
 
                     //guardo en el log lo que guardé...
                     try {
