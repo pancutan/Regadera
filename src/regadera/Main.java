@@ -41,13 +41,30 @@ Content-Transfer-Encoding: 7bit
  *
  * Los HTML a enviar deben tener un encabezado que el server de correo pueda aceptar, como
  *
- * From: Informes Fundación Islas Malvinas - <info@eim.edu.ar>
+ * From: Informes Fundación Islas Malvinas - <info@***.edu.ar>
  * Subject: Eje turístico: visita de Alcaldesa de Viña del Mar
  * Content-Type: text/html;charset=UTF-8
  * Content-Transfer-Encoding: 7bit
+ *
+ * No sea rata: el From debe referirse a una cuenta paga, al menos de aquellas que 
+ * valen u$s 0,7 mensuales, en un hosting lo mas amable posible.
  * 
- * Si se poseen bases de datos muy grandes, para no abusar del server SMTP, se
+ * Este programa no esta creado para emitir SPAM, sino mantenerse justo por debajo de 
+ * la cantidad de correos que incluye nuestro plan de hosting.
+ *
+ * No abuse del SMTP de su hosting, y consulte a la mesa de ayuda cuantos correos diarios 
+ * puede enviar. Luego, ajuste el valor Thread.sleep(60 * 1000);
+ * En forma predefinido, 60*1000 es un mail por minuto, es decir, 24 hs * 60 m = 1440 
+ * correos diarios. Para no abusar del SMTP, mantengase por debajo de la cantidad permitida. 
+ * 
+ * Si posee bases de datos muy grandes, evite mandar correos duplicados: se
  * recomienda tambien leer http://bunker-blog.blogspot.com/2009/11/sexpy.html
+ *
+ * No embeba imagenes; no abuse del SMTP, solo vincule a imagenes externas
+ * Si son imagenes muy grandes, el browser mostrará una versión mas pequeña, y hay usuarios
+ * que no saben usar la lupa para agrandarla, de modo que en el <img use dimensiones, o 
+ * apunte a un html externo que contenga la foto: el navegador no la redimensionará.
+ * y por cierto, use la proiedad alt de <img por si el cliente de correo no muestra imagenes.
  * 
  */
 package regadera;
@@ -83,7 +100,7 @@ public class Main {
         //    try {
         // Apertura del fichero y creacion de BufferedReader para poder
         // hacer una lectura comoda (disponer del metodo readLine()).
-        archivo = new File("regadera/limpios3.txt");
+        archivo = new File("regadera/limpios4.txt");
         fr = new FileReader(archivo);
         br = new BufferedReader(fr);
 
@@ -99,7 +116,7 @@ public class Main {
         try {
 
             //Me envio una copia...
-            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < regadera/peqchefs.html"};
+            //String[] command = {"sh", "-c", "ssmtp -v escuelaint@gmail.com < regadera/htmls/celiaco.html"};
 
 
             for (int i = 0; i < v.size(); i++) {
@@ -117,7 +134,7 @@ public class Main {
                 try {
                     //String command = "ls -lh ";
 
-                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/diplomatura.html"};
+                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/htmls/celiaco.html"};
 
                     //guardo en el log lo que guardé...
                     try {
