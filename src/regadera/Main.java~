@@ -134,7 +134,7 @@ public class Main {
                 try {
                     //String command = "ls -lh ";
 
-                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/htmls/pagweb.html"};
+                    String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/htmls/celiaco.html"};
 
                     //guardo en el log lo que guardé...
                     try {
