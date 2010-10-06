@@ -100,7 +100,7 @@ public class Main {
     //    try {
     // Apertura del fichero y creacion de BufferedReader para poder
     // hacer una lectura comoda (disponer del metodo readLine()).
-    archivo = new File("regadera/gloria5.txt");
+    archivo = new File("regadera/limpitos.txt");
     fr = new FileReader(archivo);
     br = new BufferedReader(fr);
 
@@ -130,7 +130,10 @@ public class Main {
         // si queremos convertirlo a algun tipo, nos toca hacer un casting (Tipo), asi:
         // ojo! esto solo lo puedes hacer si agregaste objetos de tipo String en el vector
         String str = (String) objeto;
-        //System.out.println("Leyendo desde vector: " + str);
+
+        //Le limpio espacios...
+        String strLimpio = str.trim();
+        //System.out.println("Leyendo desde vector: " + strLimpio);
 
         /**
          * Comienza ejecución de comando en consola
@@ -138,12 +141,12 @@ public class Main {
         try {
           //String command = "ls -lh ";
 
-          String[] command = {"sh", "-c", "ssmtp -v " + str + " < regadera/htmls/panadero.html"};
+          String[] command = {"sh", "-c", "ssmtp -v " + strLimpio + " < regadera/htmls/PORTUGUES2010.html"};
 
           //guardo en el log lo que guardé...
           try {
             BufferedWriter out = new BufferedWriter(new FileWriter("regadera/traza.log", true));
-            out.write(str + "\n");
+            out.write(strLimpio + "\n");
             out.close();
           } catch (IOException e) {
           }
@@ -183,7 +186,7 @@ public class Main {
           int returnCode = process.waitFor();
           System.out.println("Return code = " + returnCode);
 
-          System.out.println("Enviado mail: " + str + " " + (i + 1));//para que no empiece a contar desde el 0
+          System.out.println("Enviado mail: " + strLimpio + " " + (i + 1));//para que no empiece a contar desde el 0
 
 
 
